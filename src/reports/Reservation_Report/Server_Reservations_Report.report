@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <block>
+        <blockInfo>
+            <blockId>B1</blockId>
+            <joinTable>x</joinTable>
+        </blockInfo>
+        <columns>
+            <field>CUST_RECORDTYPE</field>
+        </columns>
+        <columns>
+            <field>Server__c.Operating_System__c</field>
+        </columns>
+        <columns>
+            <field>Server__c.Supported_Programming_Language__c</field>
+        </columns>
+        <columns>
+            <field>Server__c.Platform__c</field>
+        </columns>
+        <format>Summary</format>
+        <name>Servers Info</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>CustomEntityCustomEntity$Server__c$Reservation__c</reportType>
+        <scope>user</scope>
+        <timeFrameFilter>
+            <dateColumn>CUST_CREATED_DATE</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <block>
+        <blockInfo>
+            <blockId>B0</blockId>
+            <joinTable>x</joinTable>
+        </blockInfo>
+        <columns>
+            <field>Reservation__c.Start_Date__c</field>
+        </columns>
+        <columns>
+            <field>Reservation__c.End_Date__c</field>
+        </columns>
+        <columns>
+            <field>Reservation__c.Reserved_User__c</field>
+        </columns>
+        <format>Summary</format>
+        <name>Past Reservations</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>CustomEntityCustomEntity$Server__c$Reservation__c</reportType>
+        <scope>user</scope>
+        <sortColumn>Reservation__c.Start_Date__c</sortColumn>
+        <sortOrder>Desc</sortOrder>
+        <timeFrameFilter>
+            <dateColumn>CUST_CREATED_DATE</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <blockInfo>
+        <blockId xsi:nil="true"/>
+        <joinTable>x</joinTable>
+    </blockInfo>
+    <format>MultiBlock</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Server Reservations Report</name>
+    <reportType>CustomEntityCustomEntity$Server__c$Reservation__c</reportType>
+    <showDetails>true</showDetails>
+</Report>
